@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CoreData
+import SwiftUI
 
 struct CharacterData: Identifiable, Codable, Hashable {
     
@@ -22,8 +22,9 @@ struct CharacterData: Identifiable, Codable, Hashable {
     var episode: [String]?
     var url: String?
     var created: String?
+    var isFavorite: Bool? = false
     
-}
+    }
 
 struct Origin: Codable, Hashable {
     var name: String?

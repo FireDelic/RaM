@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct FavoritView: View {
-    @ObservedObject var viewModel = CharacterViewModel()
+    @FetchRequest(sortDescriptors: []) var favorits: FetchedResults<Favorit>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List(favorits) { favorit in
+                Text(favorit.name ?? "Error")
+            }
+        }
     }
 }
-
 struct FavoritView_Previews: PreviewProvider {
     static var previews: some View {
         FavoritView()

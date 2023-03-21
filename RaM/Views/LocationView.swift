@@ -13,16 +13,14 @@ struct LocationView: View {
     var body: some View {
         NavigationStack{
             List(locaviewModel.locations) { location in
-                VStack(alignment: .leading) {
-                    Text(String(location.id ?? 1))
-                        .foregroundColor(.purple)
-                    Text(location.name ?? "")
-                        .foregroundColor(.purple)
-                    font(.headline)
-                }
+                Text(String(location.id ?? 1))
+                    .foregroundColor(.purple)
+                Text(location.name ?? "")
+                    .foregroundColor(.purple)
+                font(.headline)
             }
-            .navigationTitle("Locations")
         }
+        .navigationTitle("Locations")
     }
 }
 struct LocationView_Previews: PreviewProvider {

@@ -9,22 +9,34 @@ import SwiftUI
 import CoreData
 
 struct CharacterListView: View {
-    @StateObject var viewModel: CharacterViewModel
+    @ObservedObject var viewModel: CharacterViewModel
     
     var body: some View {
-        List(viewModel.characters) {character in
-            NavigationLink( character.name ?? "", destination: CharacterDetail(characters: character))
-            RoundedRectangle(cornerRadius: 25)
-                .frame(minWidth: 300)
-                .cornerRadius(20)
-                .groupBoxStyle(.automatic)
+        NavigationView{
+            List(viewModel.characters) {character in
+                NavigationLink( character.name ?? "", destination: CharacterDetail(characters: character))
+                if character.image != nil {
+                    let imageLoader = ImageLoader()
+                    Image(uiImage: imageLoader.image ?? UIImage())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(10)
+                } else {
+                    Image(systemName: "person")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(10)
+                }
+            }
         }
         .navigationTitle("List of all Characters")
     }
 }
+
 struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterListView(viewModel: CharacterViewModel())
     }
 }
-

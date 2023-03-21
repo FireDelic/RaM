@@ -12,7 +12,7 @@ struct TheGradient: View {
     
     var body: some View {
         Button(action:{}) {
-            Text("Characters")
+            Text("")
                 .padding()
         }
         .background(Capsule()
