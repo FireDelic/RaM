@@ -7,34 +7,47 @@
 
 import SwiftUI
 import CoreData
+import Foundation
 
-struct CharacterListView: View {
+final class CharacterListView: View {
     @ObservedObject var viewModel: CharacterViewModel
+    @State var isLoading = false
+    
+    init(viewModel: CharacterViewModel){
+        self.viewModel = viewModel
+        viewModel.fetchCharacters()
+    }
     
     var body: some View {
-        NavigationView{
-            List(viewModel.characters) {character in
-                NavigationLink( character.name ?? "", destination: CharacterDetail(characters: character))
-                if character.image != nil {
-                    let imageLoader = ImageLoader()
-                    Image(uiImage: imageLoader.image ?? UIImage())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(10)
-                } else {
-                    Image(systemName: "person")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(10)
+        VStack {
+            if isLoading {
+                ProgressView()
+            } else {
+                NavigationView{
+                    List(viewModel.characters) {character in
+                        NavigationLink( character.name ?? "",
+                                        destination: CharacterDetail(viewModel: self.viewModel, characters: character))
+                        if character.image != nil {
+                            let imageLoader = ImageLoader()
+                            Image(uiImage: imageLoader.image ?? UIImage())
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(10)
+                        } else {
+                            Image(systemName: "person")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(10)
+                        }
+                    }
                 }
+                .navigationTitle("List of all Characters")
             }
         }
-        .navigationTitle("List of all Characters")
     }
 }
-
 struct CharacterListView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterListView(viewModel: CharacterViewModel())

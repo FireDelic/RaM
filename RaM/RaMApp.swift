@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct RaMApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup<<#Content: View#>> {
             ContentView()
         }
     }

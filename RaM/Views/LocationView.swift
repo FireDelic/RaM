@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct LocationView: View {
+    
     @ObservedObject var locaviewModel = LocationViewModel()
     
     var body: some View {
-        NavigationStack{
-            List(locaviewModel.locations) { location in
+        List(locaviewModel.locations) { location in
+            LazyHStack(alignment: .firstTextBaseline){
                 Text(String(location.id ?? 1))
                     .foregroundColor(.purple)
                 Text(location.name ?? "")

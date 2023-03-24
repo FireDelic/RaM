@@ -9,11 +9,11 @@ import SwiftUI
 
 struct EpisodeView: View {
     
-@ObservedObject var episodeViewModel: EpisodeViewModel
+    @ObservedObject var episodeViewModel: EpisodeViewModel
     
     var body: some View {
         List(episodeViewModel.episodes) { episode in
-            HStack(alignment: .center){
+            LazyHStack(alignment: .lastTextBaseline){
                 Text(String(episode.id ?? 1))
                     .font(.largeTitle)
                     .foregroundColor(.purple)
@@ -35,5 +35,10 @@ struct EpisodeView: View {
                 }
                 .navigationTitle("Episodes")
         }
+    }
+}
+struct Previews_EpisodeView_Previews: PreviewProvider {
+    static var previews: some View {
+        EpisodeView(episodeViewModel: EpisodeViewModel())
     }
 }

@@ -78,7 +78,7 @@ struct ContentView: View {
                     .navigationBarTitle("Locations")
             }
             .tabItem {
-                Label("Locations", systemImage: "map")
+                Label("Locations", systemImage: "signpost.right.and.left")
             }
             .tag(1) // Assign a tag to identify the tab
             
@@ -98,7 +98,7 @@ struct ContentView: View {
                     .navigationBarTitle("Favorites")
             }
             .tabItem {
-                Label("Favorites", systemImage: "star.fill")
+                Label("Favorites", systemImage: "heart.fill")
             }
             .tag(3) // Assign a tag to identify the tab
         }

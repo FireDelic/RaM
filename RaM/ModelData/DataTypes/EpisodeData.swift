@@ -10,12 +10,12 @@ import SwiftUI
 
 struct EpisodeData: Identifiable, Codable, Hashable {
     
-    var id: Int?
-    var name: String?
-    var air_date: String?
-    var episode: String?
-    var characters: [URL]?
-    var url: String?
-    var created: String?
+    let id: Int?
+    let name: String?
+    let air_date: String?
+    let episode: String?
+    let characters: [String]?
+    let url: String?
+    let created: String?
     
 }

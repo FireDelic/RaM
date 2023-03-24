@@ -8,37 +8,42 @@
 import SwiftUI
 
 struct CharacterView: View {
-    var character: CharacterData
+    @ObservedObject var viewModel: CharacterViewModel
     @ObservedObject var imageLoader: ImageLoader
+    @State var character: CharacterData
     var body: some View {
-        
-        if imageLoader.image != nil {
-            Image(uiImage: UIImage())
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-                .cornerRadius(10)
-        }
         VStack(alignment: .leading) {
-            Text(character.name ?? "Unknown")
+            if let image = imageLoader.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(10)
+            } else {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(10)
+            }
+            Text(character.name ?? "")
                 .font(.headline)
-            Text(character.status ?? "'/WERT#")
+            Text(character.status ?? "")
                 .font(.subheadline)
         }
-    }
-    func loadImage(urlString: String) {
-        guard let url = URL(string: urlString) else { return }
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url) { data, response, error in
-            if error == nil && data != nil {
-                DispatchQueue.main.async {
-                    loadImage(urlString: urlString)
-                }
-            }
+//        .onAppear {
+//            if let imageUrl = viewModel.character.image {
+//                imageLoader.loadImage(urlString: imageUrl)
+//            }
         }
-        dataTask.resume()
+    }
+
+struct CharacterView_Previews: PreviewProvider {
+    static var previews: some View {
+        CharacterView(viewModel: CharacterViewModel(), imageLoader: ImageLoader(), character: CharacterData())
     }
 }
+
     
     
     //        ZStack {
@@ -76,9 +81,3 @@ struct CharacterView: View {
     //                    .foregroundColor(.green)
     //                    .fontWeight(.heavy)
     //            }
-
-struct CharacterView_Previews: PreviewProvider {
-    static var previews: some View {
-        CharacterView(character: CharacterData(), imageLoader: ImageLoader())
-    }
-}

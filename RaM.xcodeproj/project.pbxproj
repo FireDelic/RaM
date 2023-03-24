@@ -11,6 +11,14 @@
 		1B2790CA29C7E5CB0028B5EB /* FavoritData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2790C929C7E5CB0028B5EB /* FavoritData.swift */; };
 		1B2790CD29C8632B0028B5EB /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2790CC29C8632B0028B5EB /* RepositoryProtocol.swift */; };
 		1B2790D029C8734B0028B5EB /* FavoritDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2790CF29C8734B0028B5EB /* FavoritDataController.swift */; };
+		1BD2D65429CD23DD0071C28E /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65329CD23DD0071C28E /* CharacterStatus.swift */; };
+		1BD2D65629CD24140071C28E /* CharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65529CD24140071C28E /* CharacterGender.swift */; };
+		1BD2D65829CD25D50071C28E /* CharacterOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65729CD25D50071C28E /* CharacterOrigin.swift */; };
+		1BD2D65A29CD260C0071C28E /* CharacterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65929CD260C0071C28E /* CharacterLocation.swift */; };
+		1BD2D65D29CD287D0071C28E /* RaMAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65C29CD287D0071C28E /* RaMAPIService.swift */; };
+		1BD2D65F29CD289D0071C28E /* RaMAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D65E29CD289D0071C28E /* RaMAPIRequest.swift */; };
+		1BD2D66129CD28C00071C28E /* RaMAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D66029CD28C00071C28E /* RaMAPIEndpoint.swift */; };
+		1BD2D66529CDCBE50071C28E /* RaMGetAllCharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD2D66429CDCBE50071C28E /* RaMGetAllCharactersResponse.swift */; };
 		1BDA4BCB29C470C7003EE4D3 /* RaMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA4BCA29C470C7003EE4D3 /* RaMApp.swift */; };
 		1BDA4BCD29C470C7003EE4D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA4BCC29C470C7003EE4D3 /* ContentView.swift */; };
 		1BDA4BCF29C470C8003EE4D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDA4BCE29C470C8003EE4D3 /* Assets.xcassets */; };
@@ -61,6 +69,14 @@
 		1B2790C929C7E5CB0028B5EB /* FavoritData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritData.swift; sourceTree = "<group>"; };
 		1B2790CC29C8632B0028B5EB /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		1B2790CF29C8734B0028B5EB /* FavoritDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritDataController.swift; sourceTree = "<group>"; };
+		1BD2D65329CD23DD0071C28E /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
+		1BD2D65529CD24140071C28E /* CharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGender.swift; sourceTree = "<group>"; };
+		1BD2D65729CD25D50071C28E /* CharacterOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterOrigin.swift; sourceTree = "<group>"; };
+		1BD2D65929CD260C0071C28E /* CharacterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLocation.swift; sourceTree = "<group>"; };
+		1BD2D65C29CD287D0071C28E /* RaMAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaMAPIService.swift; sourceTree = "<group>"; };
+		1BD2D65E29CD289D0071C28E /* RaMAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaMAPIRequest.swift; sourceTree = "<group>"; };
+		1BD2D66029CD28C00071C28E /* RaMAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaMAPIEndpoint.swift; sourceTree = "<group>"; };
+		1BD2D66429CDCBE50071C28E /* RaMGetAllCharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaMGetAllCharactersResponse.swift; sourceTree = "<group>"; };
 		1BDA4BC729C470C7003EE4D3 /* RaM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDA4BCA29C470C7003EE4D3 /* RaMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaMApp.swift; sourceTree = "<group>"; };
 		1BDA4BCC29C470C7003EE4D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,12 +141,37 @@
 			path = RepoProtocol;
 			sourceTree = "<group>";
 		};
-		1B2790CE29C8731B0028B5EB /* Controller */ = {
+		1BD2D65B29CD281D0071C28E /* API */ = {
 			isa = PBXGroup;
 			children = (
-				1B2790CF29C8734B0028B5EB /* FavoritDataController.swift */,
+				1BD2D65C29CD287D0071C28E /* RaMAPIService.swift */,
+				1BD2D65E29CD289D0071C28E /* RaMAPIRequest.swift */,
+				1BD2D66029CD28C00071C28E /* RaMAPIEndpoint.swift */,
 			);
-			path = Controller;
+			path = API;
+			sourceTree = "<group>";
+		};
+		1BD2D66229CDCB760071C28E /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				1BDA4BF929C49A9F003EE4D3 /* CharacterData.swift */,
+				1BDA4C1129C4B7C4003EE4D3 /* LocationData.swift */,
+				1BDA4C1329C4B7EB003EE4D3 /* EpisodeData.swift */,
+				1B2790C929C7E5CB0028B5EB /* FavoritData.swift */,
+				1BD2D65329CD23DD0071C28E /* CharacterStatus.swift */,
+				1BD2D65529CD24140071C28E /* CharacterGender.swift */,
+				1BD2D65729CD25D50071C28E /* CharacterOrigin.swift */,
+				1BD2D65929CD260C0071C28E /* CharacterLocation.swift */,
+			);
+			path = DataTypes;
+			sourceTree = "<group>";
+		};
+		1BD2D66329CDCB9F0071C28E /* ResponseTypes */ = {
+			isa = PBXGroup;
+			children = (
+				1BD2D66429CDCBE50071C28E /* RaMGetAllCharactersResponse.swift */,
+			);
+			path = ResponseTypes;
 			sourceTree = "<group>";
 		};
 		1BDA4BBE29C470C7003EE4D3 = {
@@ -156,6 +197,7 @@
 		1BDA4BC929C470C7003EE4D3 /* RaM */ = {
 			isa = PBXGroup;
 			children = (
+				1BD2D65B29CD281D0071C28E /* API */,
 				1BDA4BCA29C470C7003EE4D3 /* RaMApp.swift */,
 				1BDA4BF829C49A5E003EE4D3 /* ModelData */,
 				1BDA4BF729C49A4E003EE4D3 /* ViewModels */,
@@ -233,6 +275,7 @@
 		1BDA4BF729C49A4E003EE4D3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1B2790CF29C8734B0028B5EB /* FavoritDataController.swift */,
 				1BDA4BFB29C49AF3003EE4D3 /* CharacterViewModel.swift */,
 				1BDA4C1929C4B904003EE4D3 /* EpisodeviewModel.swift */,
 				1BDA4C1B29C4B929003EE4D3 /* LocationViewModel.swift */,
@@ -243,11 +286,8 @@
 		1BDA4BF829C49A5E003EE4D3 /* ModelData */ = {
 			isa = PBXGroup;
 			children = (
-				1B2790CE29C8731B0028B5EB /* Controller */,
-				1BDA4BF929C49A9F003EE4D3 /* CharacterData.swift */,
-				1BDA4C1129C4B7C4003EE4D3 /* LocationData.swift */,
-				1BDA4C1329C4B7EB003EE4D3 /* EpisodeData.swift */,
-				1B2790C929C7E5CB0028B5EB /* FavoritData.swift */,
+				1BD2D66329CDCB9F0071C28E /* ResponseTypes */,
+				1BD2D66229CDCB760071C28E /* DataTypes */,
 			);
 			path = ModelData;
 			sourceTree = "<group>";
@@ -383,26 +423,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDA4C0A29C4B64A003EE4D3 /* CharacterListView.swift in Sources */,
+				1BD2D65A29CD260C0071C28E /* CharacterLocation.swift in Sources */,
 				1BF1713029C9DCE80072EAC0 /* FavoritRepository.swift in Sources */,
 				1B2790C829C7E5190028B5EB /* FavoritDataModel.xcdatamodeld in Sources */,
 				1BDA4BFC29C49AF3003EE4D3 /* CharacterViewModel.swift in Sources */,
 				1BDA4C0029C49D20003EE4D3 /* TheGradient.swift in Sources */,
+				1BD2D65829CD25D50071C28E /* CharacterOrigin.swift in Sources */,
 				1BDA4C1C29C4B929003EE4D3 /* LocationViewModel.swift in Sources */,
 				1BDA4C0829C4B5B6003EE4D3 /* CharacterDetail.swift in Sources */,
+				1BD2D65629CD24140071C28E /* CharacterGender.swift in Sources */,
+				1BD2D66129CD28C00071C28E /* RaMAPIEndpoint.swift in Sources */,
 				1BDA4BCD29C470C7003EE4D3 /* ContentView.swift in Sources */,
 				1BDA4C1A29C4B904003EE4D3 /* EpisodeviewModel.swift in Sources */,
 				1BDA4C1029C4B783003EE4D3 /* HomeScreenView.swift in Sources */,
 				1BDA4C1629C4B81F003EE4D3 /* LocationView.swift in Sources */,
 				1BDA4BCB29C470C7003EE4D3 /* RaMApp.swift in Sources */,
 				1BDA4BFA29C49A9F003EE4D3 /* CharacterData.swift in Sources */,
+				1BD2D66529CDCBE50071C28E /* RaMGetAllCharactersResponse.swift in Sources */,
 				1BDA4C0E29C4B758003EE4D3 /* FavoritView.swift in Sources */,
 				1BDA4C1829C4B860003EE4D3 /* EpisodeView.swift in Sources */,
+				1BD2D65429CD23DD0071C28E /* CharacterStatus.swift in Sources */,
 				1BDA4C1229C4B7C4003EE4D3 /* LocationData.swift in Sources */,
 				1B2790D029C8734B0028B5EB /* FavoritDataController.swift in Sources */,
 				1BDA4C0629C4B4EA003EE4D3 /* ImageLoader.swift in Sources */,
 				1BDA4BFE29C49B3C003EE4D3 /* CircleImage.swift in Sources */,
+				1BD2D65F29CD289D0071C28E /* RaMAPIRequest.swift in Sources */,
 				1B2790CA29C7E5CB0028B5EB /* FavoritData.swift in Sources */,
 				1BDA4C0429C4B43B003EE4D3 /* CharacterImageView.swift in Sources */,
+				1BD2D65D29CD287D0071C28E /* RaMAPIService.swift in Sources */,
 				1BDA4C0229C4B40F003EE4D3 /* CharacterView.swift in Sources */,
 				1B2790CD29C8632B0028B5EB /* RepositoryProtocol.swift in Sources */,
 				1BDA4C0C29C4B72C003EE4D3 /* SplashScreenView.swift in Sources */,

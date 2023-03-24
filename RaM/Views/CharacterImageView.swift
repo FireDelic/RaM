@@ -8,21 +8,25 @@
 import SwiftUI
 import Foundation
 
+
 struct CharacterImageView: View {
     @ObservedObject var viewModel: CharacterViewModel
     
     var body: some View {
-        VStack{
-            Text("hi ich binn hji")
+        List(viewModel.characters, id: \.id) { character in
+                if let imageUrl = character.image {
+                    let imageLoader = ImageLoader()
+                    Image(uiImage: (imageLoader.image ?? UIImage()))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(10)
+                } else {
+                    Image(systemName: "person.fill")
+                }
+            }
         }
-//        if let imageUrl = viewModel.characters.image {
-//            ImageLoader(urlString: imageUrl)
-//        } else {
-//            Image(systemName: "person.fill")
-//        }
     }
-}
-
 struct CharacterImageView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterImageView(viewModel: CharacterViewModel())

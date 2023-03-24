@@ -9,7 +9,7 @@ import CoreData
 import Foundation
 import SwiftUI
 
-class FavoritDataController {
+struct FavoritDataController {
     
     @State var container: NSPersistentContainer
     
@@ -24,10 +24,10 @@ class FavoritDataController {
     
     func addToFavorites(_ character: CharacterData) {
         let context = container.viewContext
-        let favorit = Favorit(context: context)
+        let favorit = Favorit(context: container.viewContext)
         favorit.id = Int16(character.id ?? 1)
         favorit.name = character.name
-        favorit.status = character.status
+        favorit.status = container.status
         favorit.species = character.species
         favorit.type = character.type
         favorit.gender = character.gender
